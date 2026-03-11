@@ -9,10 +9,10 @@ jobs:
 
     steps:
       - name: Descargar código
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Instalar Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6
         with:
           python-version: '3.11'
           architecture: 'x64'
@@ -28,7 +28,7 @@ jobs:
           pyinstaller --onefile --windowed main.py
 
       - name: Guardar ejecutable
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: app_windows
           path: dist/main.exe
